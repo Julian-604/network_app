@@ -1,12 +1,18 @@
 import argparse
 from netmiko import ConnectHandler
 
+# Predefined username and password
+USERNAME = 'admin'  # Replace with your actual username
+PASSWORD = 'password123'  # Replace with your actual password
+
 def run_command_on_switch(switch_ip, command):
     try:
-        # Define device connection details (assuming SSH keys or no authentication)
+        # Define device connection details
         device = {
             'device_type': 'cisco_ios',  # For Cisco IOS devices
             'host': switch_ip,
+            'username': USERNAME,
+            'password': PASSWORD,
         }
 
         # Establish SSH connection to the switch
